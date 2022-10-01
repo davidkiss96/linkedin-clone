@@ -1,5 +1,5 @@
 import "./HeaderOption.scss";
-import Avatar from "@mui/material/Avatar";
+import { Avatar } from "@mui/material";
 
 const HeaderOption = ({ avatar, Icon, title }) => {
   return (

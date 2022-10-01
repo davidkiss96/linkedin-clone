@@ -1,18 +1,18 @@
-import "./App.css";
-import Header from "./components/Header/Header";
+import "./App.scss";
+import Sidebar from "./components/AppBody/Sidebar";
+import Header from "./components/AppHeader/Header";
 
 function App() {
   return (
     <div className="app">
-      <header className="App-header">
-        {/* HEADER */}
-        <Header />
+      <Header />
 
-        {/* APP BODY */}
-        {/* Sidebar */}
+      {/* APP BODY */}
+      <div className="app__body">
+        <Sidebar />
         {/* Feed */}
         {/* Widgets */}
-      </header>
+      </div>
     </div>
   );
 }
