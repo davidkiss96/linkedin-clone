@@ -4,3 +4,12 @@ export { default as SupervisorAccountIcon } from "@mui/icons-material/Supervisor
 export { default as BusinessCenterIcon } from "@mui/icons-material/BusinessCenter";
 export { default as ChatIcon } from "@mui/icons-material/Chat";
 export { default as NotificationsIcon } from "@mui/icons-material/Notifications";
+export { default as CreateIcon } from "@mui/icons-material/Create";
+export { default as ImageIcon } from "@mui/icons-material/Image";
+export { default as YouTubeIcon } from "@mui/icons-material/YouTube";
+export { default as EventIcon } from "@mui/icons-material/Event";
+export { default as NewspaperIcon } from "@mui/icons-material/Newspaper";
+export { default as ThumbUpOffAltIcon } from "@mui/icons-material/ThumbUpOffAlt";
+export { default as ChatOutlinedIcon } from "@mui/icons-material/ChatOutlined";
+export { default as ShareIcon } from "@mui/icons-material/Share";
+export { default as SendIcon } from "@mui/icons-material/Send";

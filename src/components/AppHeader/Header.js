@@ -8,15 +8,26 @@ import {
   ChatIcon,
 } from "../../icons";
 import HeaderOption from "./HeaderOption/HeaderOption";
+import { logout } from "../../state/userSlice";
+
+import { useDispatch } from "react-redux";
+import { auth } from "../../firebase";
 
 const Header = () => {
+  const dispatch = useDispatch();
+
+  const logoutOfApp = () => {
+    dispatch(logout());
+    auth.signOut();
+  };
+
   return (
     <div className="header">
       <div className="header__left">
         <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="" />
         <div className="header__search">
           <SearchIcon />
-          <input type="text" />
+          <input placeholder="Search" type="text" />
         </div>
       </div>
 
@@ -26,7 +37,7 @@ const Header = () => {
         <HeaderOption Icon={BusinessCenterIcon} title="Jobs" />
         <HeaderOption Icon={ChatIcon} title="Messaging" />
         <HeaderOption Icon={NotificationsIcon} title="Notifications" />
-        <HeaderOption avatar={process.env.PUBLIC_URL + "/images/IMG_7180.PNG"} title="me" />
+        <HeaderOption avatar={true} onClick={logoutOfApp} title="me" />
       </div>
     </div>
   );

@@ -1,7 +1,11 @@
-import { Avatar } from "@mui/material";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../../state/userSlice";
+import User from "../../User/User";
 import "./Sidebar.scss";
 
 const Sidebar = () => {
+  const user = useSelector(selectUser);
+
   const recentItem = (topic) => (
     <div className="sidebar__recentItem">
       <span className="sidebar__hash">#</span>
@@ -16,9 +20,9 @@ const Sidebar = () => {
           src="https://images.unsplash.com/photo-1631507463816-a9972ba0528c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2064&q=80"
           alt=""
         />
-        <Avatar className="sidebar__avatar" />
-        <h2>David Kiss</h2>
-        <h4>davidkissdev@gmail.com</h4>
+        {user && <User className="sidebar__avatar" photoUrl={user?.photoUrl} name={user?.displayName} />}
+        <h2>{user?.displayName}</h2>
+        <h4>{user?.email}</h4>
       </div>
 
       <div className="sidebar__stats">
