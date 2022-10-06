@@ -22,7 +22,7 @@ const Login = () => {
             email: userAuth.user.email,
             uid: userAuth.user.uid,
             displayName: userAuth.user.displayName,
-            profileUrl: userAuth.user.photoURL,
+            photoUrl: userAuth.user.photoURL,
           })
         );
       })
@@ -38,7 +38,7 @@ const Login = () => {
       .then((userAuth) => {
         updateProfile(userAuth.user, {
           displayName: name,
-          photoUrl: profilePic,
+          photoURL: profilePic,
         }).then(() => {
           dispatch(
             login({
