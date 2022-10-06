@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.scss";
 import Feed from "./components/Feed/Feed";
@@ -33,16 +33,17 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="app">
-      <Header />
-
+    <div>
       {!user ? (
         <Login />
       ) : (
-        <div className="app__body">
-          <Sidebar />
-          <Feed />
-          <Widgets />
+        <div className="app">
+          <Header />
+          <div className="app__body">
+            <Sidebar />
+            <Feed />
+            <Widgets />
+          </div>
         </div>
       )}
     </div>
