@@ -13,3 +13,5 @@ export { default as ThumbUpOffAltIcon } from "@mui/icons-material/ThumbUpOffAlt"
 export { default as ChatOutlinedIcon } from "@mui/icons-material/ChatOutlined";
 export { default as ShareIcon } from "@mui/icons-material/Share";
 export { default as SendIcon } from "@mui/icons-material/Send";
+export { default as InfoIcon } from "@mui/icons-material/Info";
+export { default as FiberManualRecordIcon } from "@mui/icons-material/FiberManualRecord";

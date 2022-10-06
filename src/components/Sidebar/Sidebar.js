@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { selectUser } from "../../../state/userSlice";
-import User from "../../User/User";
+import { selectUser } from "../../state/userSlice";
+import User from "../User/User";
 import "./Sidebar.scss";
 
 const Sidebar = () => {

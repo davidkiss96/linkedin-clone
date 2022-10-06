@@ -1,12 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./App.scss";
-import Feed from "./components/AppBody/Feed/Feed";
-import Sidebar from "./components/AppBody/Sidebar/Sidebar";
-import Header from "./components/AppHeader/Header";
+import Feed from "./components/Feed/Feed";
+import Sidebar from "./components/Sidebar/Sidebar";
+import Header from "./components/Header/Header";
 import Login from "./components/Login/Login";
 import { auth } from "./firebase";
 import { login, logout, selectUser } from "./state/userSlice";
+import Widgets from "./components/Widgets/Widgets";
 
 function App() {
   const dispatch = useDispatch();
@@ -41,7 +42,7 @@ function App() {
         <div className="app__body">
           <Sidebar />
           <Feed />
-          {/* Widgets */}
+          <Widgets />
         </div>
       )}
     </div>

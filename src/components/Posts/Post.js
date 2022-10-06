@@ -1,11 +1,12 @@
-import { ChatOutlinedIcon, SendIcon, ShareIcon, ThumbUpOffAltIcon } from "../../../icons";
-import User from "../../User/User";
+import { forwardRef } from "react";
+import { ChatOutlinedIcon, SendIcon, ShareIcon, ThumbUpOffAltIcon } from "../../icons";
+import User from "../User/User";
 import InputOption from "../InputOption/InputOption";
 import "./Post.scss";
 
-const Post = ({ name, description, message, photoUrl, timestamp }) => {
+const Post = forwardRef(({ name, description, message, photoUrl, timestamp }, ref) => {
   return (
-    <div className="post">
+    <div ref={ref} className="post">
       <div className="post__header">
         <User className="post__avatar" name={name} photoUrl={photoUrl} />
         <div className="post__info">
@@ -25,6 +26,6 @@ const Post = ({ name, description, message, photoUrl, timestamp }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Post;

@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { CreateIcon, EventIcon, ImageIcon, NewspaperIcon, YouTubeIcon } from "../../../icons";
+import { CreateIcon, EventIcon, ImageIcon, NewspaperIcon, YouTubeIcon } from "../../icons";
 import InputOption from "../InputOption/InputOption";
 import Post from "../Posts/Post";
-import { db } from "../../../firebase";
+import { db } from "../../firebase";
 import { addDoc, collection, onSnapshot, orderBy, query, serverTimestamp } from "firebase/firestore";
 import "./Feed.scss";
 import { useSelector } from "react-redux";
-import { selectUser } from "../../../state/userSlice";
+import { selectUser } from "../../state/userSlice";
+import FlipMove from "react-flip-move";
 
 const Feed = () => {
   const [input, setInput] = useState("");
@@ -35,7 +36,7 @@ const Feed = () => {
       description: user.email,
       message: input,
       photoUrl: user.photoUrl || "",
-      timestamp: serverTimestamp().fromData(new Date()),
+      timestamp: serverTimestamp(),
     });
 
     setInput("");
@@ -61,8 +62,8 @@ const Feed = () => {
         </div>
       </div>
       {/* Posts */}
-      {posts.map(({ id, data: { name, description, message, photoUrl, timestamp } }) => {
-        return (
+      <FlipMove>
+        {posts.map(({ id, data: { name, description, message, photoUrl, timestamp } }) => (
           <Post
             key={id}
             name={name}
@@ -71,8 +72,8 @@ const Feed = () => {
             photoUrl={photoUrl}
             timestamp={timestamp}
           />
-        );
-      })}
+        ))}
+      </FlipMove>
     </div>
   );
 };
